@@ -3,202 +3,139 @@ import TaskTimeline from '../../components/TaskTimeline';
 
 export default function DemoPage() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="border-b border-gray-800 bg-background-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <Link href="/" className="text-xl font-bold text-primary">TaskFlow</Link>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Link href="/login" className="text-gray-300 hover:text-white">
-                Login
-              </Link>
-              <Link href="/signup" className="btn btn-primary">
-                Sign Up Free
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Demo Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white">Interactive Demo</h1>
-          <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
-            Experience the power of TaskFlow's visual timeline. This demo shows how you can manage your day with our intuitive interface.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-1">
-            <div className="card sticky top-6">
-              <h2 className="text-2xl font-bold text-white mb-4">Demo Features</h2>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 mr-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <div>
-                    <span className="text-white font-medium">Visual Timeline</span>
-                    <p className="text-gray-400 text-sm mt-1">
-                      See your day laid out chronologically with color-coded tasks
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 mr-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <div>
-                    <span className="text-white font-medium">Task Completion</span>
-                    <p className="text-gray-400 text-sm mt-1">
-                      Mark tasks as complete and see them visually crossed out
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 mr-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <div>
-                    <span className="text-white font-medium">Duration Tracking</span>
-                    <p className="text-gray-400 text-sm mt-1">
-                      See how much time each task takes and track your productivity
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 mr-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <div>
-                    <span className="text-white font-medium">Categorization</span>
-                    <p className="text-gray-400 text-sm mt-1">
-                      Organize tasks by category with color-coding for quick visual reference
-                    </p>
-                  </div>
-                </li>
-              </ul>
-
-              <div className="mt-8">
-                <Link href="/signup" className="btn btn-primary w-full text-center">
-                  Try It Yourself
-                </Link>
-                <p className="text-gray-400 text-sm text-center mt-4">
-                  No credit card required to start
-                </p>
+    <div className="min-h-screen bg-gradient-to-br from-background-dark via-background to-background-dark relative">
+      {/* Background elements */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="blur-circle top-0 left-1/4 w-96 h-96 from-primary/10"></div>
+      <div className="blur-circle bottom-0 right-1/4 w-96 h-96 from-secondary/10"></div>
+      
+      {/* Header with nav tabs */}
+      <header className="border-b border-white/5 bg-background-darker/50 backdrop-blur-xl sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <div className="h-8 w-8 rounded-md bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                </svg>
               </div>
-            </div>
-          </div>
-
-          <div className="lg:col-span-2">
-            <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-800 bg-background-light p-6">
-              <div className="flex justify-between items-center border-b border-gray-800 pb-4 mb-6">
-                <h2 className="text-2xl font-bold text-white">Your Day at a Glance</h2>
-                <div className="text-gray-400">Monday, May 22</div>
-              </div>
-              
-              <TaskTimeline />
-              
-              <div className="mt-8 pt-6 border-t border-gray-800 flex justify-between items-center">
-                <div className="text-gray-400">
-                  <div className="text-sm">Total tasks: 8</div>
-                  <div className="text-sm">Completed: 3</div>
-                </div>
-                <button className="btn btn-primary flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
-                  </svg>
-                  Add Task
-                </button>
-              </div>
+              <h1 className="text-xl font-bold text-white">TaskFlow</h1>
             </div>
             
-            <div className="mt-8 rounded-xl overflow-hidden shadow-2xl border border-gray-800 bg-background-light p-6">
-              <h2 className="text-2xl font-bold text-white mb-4">Other Views</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="card hover:bg-background-lighter transition-colors cursor-pointer">
-                  <h3 className="text-xl font-semibold text-white">Weekly Calendar</h3>
-                  <p className="mt-2 text-gray-300">
-                    Get a broader view of your upcoming tasks and schedule
-                  </p>
-                </div>
-                <div className="card hover:bg-background-lighter transition-colors cursor-pointer">
-                  <h3 className="text-xl font-semibold text-white">Focus Mode</h3>
-                  <p className="mt-2 text-gray-300">
-                    Eliminate distractions and focus on your current task
-                  </p>
-                </div>
-                <div className="card hover:bg-background-lighter transition-colors cursor-pointer">
-                  <h3 className="text-xl font-semibold text-white">Analytics</h3>
-                  <p className="mt-2 text-gray-300">
-                    Track your productivity and time usage patterns
-                  </p>
-                </div>
-                <div className="card hover:bg-background-lighter transition-colors cursor-pointer">
-                  <h3 className="text-xl font-semibold text-white">Team View</h3>
-                  <p className="mt-2 text-gray-300">
-                    Coordinate schedules with your team members
-                  </p>
-                </div>
+            {/* Navbar buttons */}
+            <div className="flex items-center space-x-1">
+              <button className="btn btn-glass btn-sm">Dashboard</button>
+              <button className="btn btn-glass btn-sm">Tasks</button>
+              <button className="btn btn-glass btn-sm">Calendar</button>
+              <button className="btn btn-glass btn-sm">Projects</button>
+            </div>
+            
+            <div className="flex items-center space-x-4">
+              <button className="btn-outline btn-sm hidden md:flex">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                </svg>
+                New Task
+              </button>
+              <div className="w-8 h-8 rounded-full glassmorphism-light flex items-center justify-center text-white">
+                <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                </svg>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* CTA Banner */}
-      <div className="bg-primary py-12 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-white">Ready to take control of your time?</h2>
-            <p className="mt-4 text-xl text-white/80 max-w-3xl mx-auto">
-              Sign up now and get 14 days of premium features absolutely free.
-            </p>
-            <div className="mt-8">
-              <Link href="/signup" className="btn bg-white text-primary hover:bg-gray-100 text-center px-8 py-3">
-                Start Your Free Trial
-              </Link>
+      </header>
+      
+      <main className="container mx-auto px-4 py-8 relative z-10">
+        <div className="max-w-4xl mx-auto">
+          {/* Page header */}
+          <div className="mb-10 flex flex-col md:flex-row md:items-center md:justify-between">
+            <div>
+              <h1 className="text-3xl font-bold text-white mb-2 text-gradient bg-gradient-to-r from-primary to-secondary">Your Task Timeline</h1>
+              <p className="text-gray-400 glassmorphism-dark inline-block px-3 py-1 rounded-full text-sm">Monday, August 14, 2023</p>
+            </div>
+            
+            <div className="mt-4 md:mt-0 flex items-center space-x-4">
+              <div className="glassmorphism-dark p-1 rounded-md">
+                <button className="px-3 py-1.5 rounded text-sm font-medium text-white bg-primary bg-glass-shine">Day</button>
+                <button className="px-3 py-1.5 rounded text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5">Week</button>
+                <button className="px-3 py-1.5 rounded text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5">Month</button>
+              </div>
+              
+              <button className="btn-icon glassmorphism-light hover:bg-white/5">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
+                </svg>
+              </button>
             </div>
           </div>
+          
+          {/* Tasks summary */}
+          <div className="mb-10 grid grid-cols-1 md:grid-cols-4 gap-4">
+            {[
+              { label: 'Total Tasks', value: '8', icon: '��', color: 'primary' },
+              { label: 'Completed', value: '3', icon: '✅', color: 'secondary' },
+              { label: 'In Progress', value: '5', icon: '⏳', color: 'task-work' },
+              { label: 'Total Hours', value: '8.75', icon: '⏱️', color: 'accent' },
+            ].map((stat, index) => (
+              <div key={index} className="glassmorphism hover:shadow-glass-intense transition-all duration-300 p-4 group">
+                <div className="flex items-center space-x-4">
+                  <div className={`w-10 h-10 rounded-lg bg-${stat.color}/10 flex items-center justify-center text-xl group-hover:bg-${stat.color}/20 transition-colors`}>
+                    {stat.icon}
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-400">{stat.label}</div>
+                    <div className="text-2xl font-bold text-white">{stat.value}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Timeline */}
+          <div className="glassmorphism p-6 md:p-8 shadow-glassmorphism">
+            <TaskTimeline />
+          </div>
+          
+          {/* User profile */}
+          <div className="flex items-center gap-2">
+            <button className="btn btn-primary btn-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+              </svg>
+              <span>3</span>
+            </button>
+            <button className="btn btn-glass">
+              <span className="text-sm font-medium">John Doe</span>
+              <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-white">JD</div>
+            </button>
+          </div>
+          
+          {/* Task summary actions */}
+          <div className="flex justify-end mt-4">
+            <button className="btn btn-outline btn-secondary btn-sm mr-2">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clipRule="evenodd" />
+              </svg>
+              Filter
+            </button>
+            <button className="btn btn-outline btn-accent btn-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
+              </svg>
+              Sort
+            </button>
+          </div>
+          
+          {/* Floating action button */}
+          <button className="fixed bottom-6 right-6 btn btn-primary btn-lg rounded-full w-14 h-14 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+          </button>
         </div>
-      </div>
-
-      {/* Footer */}
-      <footer className="bg-background-light border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <Link href="/" className="text-xl font-bold text-primary">TaskFlow</Link>
-            <div className="mt-4 md:mt-0">
-              <ul className="flex space-x-6">
-                <li><Link href="/about" className="text-gray-400 hover:text-white">About</Link></li>
-                <li><Link href="/features" className="text-gray-400 hover:text-white">Features</Link></li>
-                <li><Link href="/pricing" className="text-gray-400 hover:text-white">Pricing</Link></li>
-                <li><Link href="/contact" className="text-gray-400 hover:text-white">Contact</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8 border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400">© 2023 TaskFlow. All rights reserved.</p>
-            <div className="mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-400 hover:text-white text-sm">Privacy Policy</Link>
-              <span className="mx-2 text-gray-600">|</span>
-              <Link href="/terms" className="text-gray-400 hover:text-white text-sm">Terms of Service</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      </main>
     </div>
   );
 } 
